@@ -1,0 +1,17 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Kaos Polos",
+      "price": 35000,
+      "description": "Kaos polos cotton combed 30s"
+    },
+    {
+      "id": 2,
+      "name": "Celana Jeans",
+      "price": 90000,
+      "description": "Celana jeans pria model slim fit"
+    }
+  ],
+  "cart": []
+}
