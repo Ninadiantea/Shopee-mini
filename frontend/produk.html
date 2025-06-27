@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Keranjang - Mini Shopee</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Keranjang Belanja</h1>
+  <div id="cart-list"></div>
+  <button onclick="checkout()">Checkout</button>
+  <br><br>
+  <a href="index.html">Kembali ke Beranda</a>
+
+  <script>
+    function loadCart() {
+      fetch('/api/cart')
+        .then(res => res.json())
+        .then(cart => {
+          const list = document.getElementById('cart-list');
+          list.innerHTML = '';
+          if (!cart.length) {
+            list.innerHTML = '<i>Keranjang kosong</i>';
+            return;
+          }
+          cart.forEach(p => {
+            const div = document.createElement('div');
+            div.className = 'product';
+            div.innerHTML = `
+              <b>${p.name}</b> - Rp${p.price.toLocaleString()}<br>
+              <i>${p.description}</i>
+              <hr>
+            `;
+            list.appendChild(div);
+          });
+        });
+    }
+
+    function checkout() {
+      fetch('/api/checkout', { method: 'POST' })
+        .then(res => res.json())
+        .then(data => {
+          alert(data.message);
+          loadCart();
+        });
+    }
+
+    loadCart();
+  </script>
+</body>
+</html>
