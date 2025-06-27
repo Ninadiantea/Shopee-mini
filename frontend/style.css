@@ -1,0 +1,30 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 30px;
+  background: #fafaff;
+}
+h1 {
+  color: #ee4d2d;
+}
+.product {
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+button {
+  background: #ee4d2d;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 6px 10px;
+  cursor: pointer;
+}
+button:hover {
+  opacity: 0.8;
+}
+a {
+  color: #ee4d2d;
+  text-decoration: none;
+}
